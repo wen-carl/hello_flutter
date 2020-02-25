@@ -6,7 +6,18 @@ class HomeListPage extends StatelessWidget {
   HomeListPage({Key key, this.title}) : super(key: key);
 
   final String title;
-  final _items = <String>['Text', 'Button', 'Image/Icon', ''];
+  final _items = <String>[
+    'Text',
+    'Button',
+    'Image/Icon',
+    'Switch',
+    'Checkbox',
+    'Radio',
+    'Slider',
+    'Progress',
+    'TextField',
+    'Form',
+  ];
 
   @override
   Widget build(BuildContext context) {
