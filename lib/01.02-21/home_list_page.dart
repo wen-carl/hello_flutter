@@ -17,7 +17,13 @@ class HomeListPage extends StatelessWidget {
     'Progress',
     'TextField',
     'Form',
-  ];
+    'Column',
+    'Row',
+    'Wrap',
+    'Flow',
+    'Stack',
+    'Align'
+  ].reversed.toList();
 
   @override
   Widget build(BuildContext context) {

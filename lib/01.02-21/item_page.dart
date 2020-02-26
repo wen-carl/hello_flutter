@@ -9,6 +9,12 @@ import 'package:hello_flutter/03.02-05/radio_content.dart';
 import 'package:hello_flutter/03.02-05/slider_content.dart';
 import 'package:hello_flutter/03.02-05/switch_content.dart';
 import 'package:hello_flutter/03.02-05/textfield_content.dart';
+import 'package:hello_flutter/04.02-26/align_content.dart';
+import 'package:hello_flutter/04.02-26/column_content.dart';
+import 'package:hello_flutter/04.02-26/flow_content.dart';
+import 'package:hello_flutter/04.02-26/row_content.dart';
+import 'package:hello_flutter/04.02-26/stack_content.dart';
+import 'package:hello_flutter/04.02-26/wrap_content.dart';
 
 class ItemPage<T extends Widget> extends StatelessWidget {
   ItemPage({Key key, this.title}) : super(key: key);
@@ -56,6 +62,22 @@ class ItemPage<T extends Widget> extends StatelessWidget {
       case 'Form':
         return FormContent();
         break;
+      case 'Column':
+        return ColumnContent();
+        break;
+      case 'Row':
+        return RowContent();
+        break;
+      case 'Wrap':
+        return WrapContent();
+        break;
+      case 'Flow':
+        return FlowContent();
+        break;
+      case 'Stack':
+        return StackContent();
+      case 'Align':
+        return AlignContent();
       default:
         return Container();
     }
