@@ -22,7 +22,13 @@ class HomeListPage extends StatelessWidget {
     'Wrap',
     'Flow',
     'Stack',
-    'Align'
+    'Align',
+    'Padding',
+    'ConstrainedBox',
+    'DecoratedBox',
+    'Transform',
+    'Container',
+    'Clip'
   ].reversed.toList();
 
   @override

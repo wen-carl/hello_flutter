@@ -15,6 +15,12 @@ import 'package:hello_flutter/04.02-26/flow_content.dart';
 import 'package:hello_flutter/04.02-26/row_content.dart';
 import 'package:hello_flutter/04.02-26/stack_content.dart';
 import 'package:hello_flutter/04.02-26/wrap_content.dart';
+import 'package:hello_flutter/05.02-27/clip_contemt.dart';
+import 'package:hello_flutter/05.02-27/constrainedbox_content.dart';
+import 'package:hello_flutter/05.02-27/container_content.dart';
+import 'package:hello_flutter/05.02-27/decoratedbox_content.dart';
+import 'package:hello_flutter/05.02-27/padding_content.dart';
+import 'package:hello_flutter/05.02-27/transform_content.dart';
 
 class ItemPage<T extends Widget> extends StatelessWidget {
   ItemPage({Key key, this.title}) : super(key: key);
@@ -78,6 +84,18 @@ class ItemPage<T extends Widget> extends StatelessWidget {
         return StackContent();
       case 'Align':
         return AlignContent();
+      case 'Padding':
+        return PaddingContent();
+      case 'ConstrainedBox':
+        return ConstrainedBoxContent();
+      case 'DecoratedBox':
+        return DecoratedBoxContent();
+      case 'Transform':
+        return TransformContent();
+      case 'Container':
+        return ContainerContent();
+      case 'Clip':
+        return ClipContent();
       default:
         return Container();
     }
