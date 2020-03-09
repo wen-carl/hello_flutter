@@ -49,7 +49,7 @@ class ItemPage<T extends Widget> extends StatelessWidget {
       case 'Button':
         return ButtonContent();
         break;
-      case 'Image/Icon':
+      case 'Image':
         return ImageContent();
         break;
       case 'Switch':

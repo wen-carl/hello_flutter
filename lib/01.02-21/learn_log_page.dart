@@ -1,16 +1,14 @@
 import 'package:flutter/material.dart';
-import 'package:hello_flutter/06.02.28/custom_scroll_view_content.dart';
-
 import 'item_page.dart';
 
-class HomeListPage extends StatelessWidget {
-  HomeListPage({Key key, this.title}) : super(key: key);
+class LearnLogPage extends StatelessWidget {
+  LearnLogPage({Key key, this.title}) : super(key: key);
 
   final String title;
   final _items = <String>[
     'Text',
     'Button',
-    'Image/Icon',
+    'Image',
     'Switch',
     'Checkbox',
     'Radio',
