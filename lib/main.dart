@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:hello_flutter/07.03-09/login_page.dart';
+import 'package:hello_flutter/08.03-10/dialog_page.dart';
 import '01.02-21/item_page.dart';
 import '01.02-21/learn_log_page.dart';
 
@@ -79,6 +80,9 @@ class _HomePageState extends State<HomePage> {
         case DemoItem.Login:
           widget = LoginPage();
           break;
+        case DemoItem.Dialog:
+          widget = DialogPage();
+          break;
         default:
           widget = Container();
       }
@@ -100,6 +104,7 @@ class _HomePageState extends State<HomePage> {
 
 enum DemoItem {
   Login,
+  Dialog,
 }
 
 enum LogItem {
