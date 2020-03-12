@@ -57,6 +57,16 @@ class DialogPage extends StatelessWidget {
                     showMyCustomLoadingDialog(context);
                   },
                   child: Text("显示一个自定义的对话框")),
+              RaisedButton(
+                  onPressed: () {
+                    _showAboutDialog1(context);
+                  },
+                  child: Text("About对话框")),
+              RaisedButton(
+                  onPressed: () {
+                    _showAboutDialog2(context);
+                  },
+                  child: Text("About对话框")),
             ],
           )),
     );
@@ -206,12 +216,16 @@ class DialogPage extends StatelessWidget {
             ),
             actions: <Widget>[
               FlatButton(
-                onPressed: () {},
-                child: Text("确认"),
+                onPressed: () {
+                  Navigator.of(context).pop(false);
+                },
+                child: Text("取消"),
               ),
               FlatButton(
-                onPressed: () {},
-                child: Text("取消"),
+                onPressed: () {
+                  Navigator.of(context).pop(true);
+                },
+                child: Text("确认"),
               ),
             ],
           );
@@ -219,14 +233,15 @@ class DialogPage extends StatelessWidget {
   }
 
   void showMyDialogWithListView(BuildContext context) {
+    //如果直接将ListView放在dialog中，会报错，
     showDialog(
       context: context,
       builder: (BuildContext context) {
         return AlertDialog(
             content: Container(
           /*
-              暂时的解决方法：要将ListView包装在具有特定宽度和高度的Container中
-              如果Container没有定义这两个属性的话，会报错，无法显示ListView
+              暂时的解决方法：要将ListView包装在具��特定宽度和高度的Container中
+              如果Container没有定义这两个属性的话，会报错，无法显�����ListView
                */
           width: MediaQuery.of(context).size.width * 0.9,
           height: MediaQuery.of(context).size.height * 0.9,
@@ -243,8 +258,6 @@ class DialogPage extends StatelessWidget {
         ));
       },
     );
-
-    //如果直接将ListView放在dialog中，会报错，
   }
 
   void showMyDialogWithStateBuilder(BuildContext context) {
@@ -317,6 +330,40 @@ class DialogPage extends StatelessWidget {
     Future.delayed(Duration(seconds: 5), () {
       Navigator.of(context).pop();
     });
+  }
+
+  void _showAboutDialog1(BuildContext context) {
+    showAboutDialog(
+      context: context,
+      applicationName: 'Flutter Demo',
+      applicationVersion: '0.0.1',
+      applicationLegalese: 'Copyright: this is a copyright notice topically',
+      applicationIcon:
+          Image.asset('images/saber.jpg', width: 40.0, height: 40.0),
+      children: <Widget>[Text('我是个比较正经的对话框内容...你可以随便把我替换成任何部件，只要你喜欢(*^▽^*)')],
+    );
+  }
+
+  void _showAboutDialog2(BuildContext context) {
+    showDialog(
+        barrierDismissible: false,
+        context: context,
+        builder: (context) => AboutDialog(
+              // App 的名字
+              applicationName: 'Flutter Demo',
+              // App 的版本号
+              applicationVersion: '0.1.1',
+              // App 基本信息下面会显示一行小字，主要用来显示版权信息
+              applicationLegalese:
+                  'Copyright: this is a copyright notice topically',
+              // App 的图标
+              applicationIcon: Icon(Icons.android,
+                  size: 28.0, color: CupertinoColors.activeBlue),
+              // 任何你想展示的
+              children: <Widget>[
+                Text('我是个比较正经的对话框内容...你可以随便把我替换成任何部件，只要你喜欢(*^▽^*)')
+              ],
+            ));
   }
 }
 
