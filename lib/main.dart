@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'demo/bottom_sheet_page.dart';
 import 'demo/dialog_page.dart';
 import 'demo/login_page.dart';
@@ -37,16 +38,28 @@ class _HomePageState extends State<HomePage> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text(widget.title),
-      ),
-      body: _buildBoday(context),
-      floatingActionButton: FloatingActionButton(
-        onPressed: null,
-        tooltip: 'Increment',
-        child: Icon(Icons.add),
-      ),
+    return OrientationBuilder(
+      builder: (BuildContext context, Orientation orientation) {
+        return Container(
+          child: Container(
+            color: Theme.of(context).canvasColor,
+            child: SafeArea(
+              top: orientation != Orientation.portrait,
+              child: Scaffold(
+                appBar: AppBar(
+                  title: Text(widget.title),
+                ),
+                body: _buildBoday(context),
+                floatingActionButton: FloatingActionButton(
+                  onPressed: () {},
+                  tooltip: 'Increment',
+                  child: Icon(Icons.add),
+                ),
+              ),
+            ),
+          ),
+        );
+      },
     );
   }
 
@@ -139,4 +152,5 @@ enum LogItem {
   Gridview,
   CustomScrollView,
   ScrollController,
+  Draggable,
 }

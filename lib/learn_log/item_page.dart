@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:hello_flutter/learn_log/draggable_content.dart';
 import 'package:hello_flutter/learn_log/padding_content.dart';
 import 'package:hello_flutter/learn_log/progress_content.dart';
 import 'package:hello_flutter/learn_log/radio_content.dart';
@@ -38,7 +39,13 @@ class ItemPage<T extends Widget> extends StatelessWidget {
       appBar: AppBar(
         title: Text(title),
       ),
-      body: getWidget(title),
+      body: SafeArea(
+        child: getWidget(title),
+      ),
+      floatingActionButton: FloatingActionButton(
+        child: Icon(Icons.add_alert),
+        onPressed: () {},
+      ),
     );
   }
 
@@ -112,8 +119,14 @@ class ItemPage<T extends Widget> extends StatelessWidget {
         return CustomScrollViewContent();
       case 'ScrollController':
         return ScrollControllerContent();
+      case 'Draggable':
+        return DraggableContent();
       default:
-        return Container();
+        return Container(
+          child: Center(
+            child: Text('Error: $title is not implemented!'),
+          ),
+        );
     }
   }
 }
