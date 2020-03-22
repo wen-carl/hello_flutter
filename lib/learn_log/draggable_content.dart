@@ -150,6 +150,10 @@ class _DraggableContentState extends State<DraggableContent> {
             child: RandomContainer(
               child: Row(
                 children: <Widget>[
+                  // onDragStarted：开始拖动时回调。
+                  // onDragEnd：拖动结束时回调。
+                  // onDraggableCanceled：未拖动到DragTarget控件上时回调。
+                  // onDragCompleted：拖动到DragTarget控件上时回调。
                   Draggable(
                     data: Color(0x000000FF),
                     onDragStarted: () {
@@ -195,6 +199,14 @@ class _DraggableContentState extends State<DraggableContent> {
                   SizedBox(
                     width: 200,
                   ),
+
+                  // DragTarget
+                  // 当onWillAccept返回true时， candidateData参数的数据是Draggable的data数据。
+                  // 当onWillAccept返回false时， rejectedData参数的数据是Draggable的data数据
+                  //
+                  // onWillAccept：拖到该控件上时调用，需要返回true或者false，返回true，松手后会回调onAccept，否则回调onLeave。
+                  // onAccept：onWillAccept返回true时，用户松手后调用。
+                  // onLeave：onWillAccept返回false时，用户松手后调用
                   DragTarget<Color>(
                     builder: (BuildContext context, List<Color> candidateData,
                         List<dynamic> rejectedData) {
