@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
+
 import 'demo/bottom_sheet_page.dart';
 import 'demo/dialog_page.dart';
 import 'demo/login_page.dart';
@@ -15,8 +15,7 @@ class DemoApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: //LearnLogPage(title: '学习日志'),
-          HomePage(title: 'Flutter Demo Home Page'),
+      home: HomePage(title: 'Flutter Demo Home Page'),
     );
   }
 }
@@ -31,7 +30,7 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  static final _logItems = LogItem.values;
+  static final _logItems = LogItem.values.reversed.toList();
   static final _demoItems = DemoItem.values;
 
   static final _items = {'学习记录': _logItems, 'Demo': _demoItems};
@@ -153,4 +152,7 @@ enum LogItem {
   CustomScrollView,
   ScrollController,
   Draggable,
+  Stepper,
+  DataTable,
+  PaginatedDataTable,
 }

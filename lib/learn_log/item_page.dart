@@ -1,12 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:hello_flutter/learn_log/draggable_content.dart';
 import 'package:hello_flutter/learn_log/padding_content.dart';
+import 'package:hello_flutter/learn_log/paginated_datatable_content.dart';
 import 'package:hello_flutter/learn_log/progress_content.dart';
 import 'package:hello_flutter/learn_log/radio_content.dart';
 import 'package:hello_flutter/learn_log/row_content.dart';
 import 'package:hello_flutter/learn_log/scrollcontroller_content.dart';
 import 'package:hello_flutter/learn_log/slider_content.dart';
 import 'package:hello_flutter/learn_log/stack_content.dart';
+import 'package:hello_flutter/learn_log/stepper_content.dart';
 import 'package:hello_flutter/learn_log/switch_content.dart';
 import 'package:hello_flutter/learn_log/text_content.dart';
 import 'package:hello_flutter/learn_log/textfield_content.dart';
@@ -21,6 +23,7 @@ import 'column_content.dart';
 import 'constrainedbox_content.dart';
 import 'container_content.dart';
 import 'custom_scroll_view_content.dart';
+import 'datatable_content.dart';
 import 'decoratedbox_content.dart';
 import 'flow_content.dart';
 import 'form_content.dart';
@@ -121,6 +124,12 @@ class ItemPage<T extends Widget> extends StatelessWidget {
         return ScrollControllerContent();
       case 'Draggable':
         return DraggableContent();
+      case 'Stepper':
+        return StepperContent();
+      case 'DataTable':
+        return DataTableContent();
+      case 'PaginatedDataTable':
+        return PaginatedDataTableContent();
       default:
         return Container(
           child: Center(
