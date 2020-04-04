@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:hello_flutter/learn_log/draggable_content.dart';
+import 'package:hello_flutter/learn_log/expansion_panel_content.dart';
 import 'package:hello_flutter/learn_log/padding_content.dart';
 import 'package:hello_flutter/learn_log/paginated_datatable_content.dart';
 import 'package:hello_flutter/learn_log/progress_content.dart';
@@ -130,6 +131,8 @@ class ItemPage<T extends Widget> extends StatelessWidget {
         return DataTableContent();
       case 'PaginatedDataTable':
         return PaginatedDataTableContent();
+      case 'ExpansionPanel':
+        return ExpansionPanelContent();
       default:
         return Container(
           child: Center(

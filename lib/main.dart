@@ -155,4 +155,5 @@ enum LogItem {
   Stepper,
   DataTable,
   PaginatedDataTable,
+  ExpansionPanel,
 }
