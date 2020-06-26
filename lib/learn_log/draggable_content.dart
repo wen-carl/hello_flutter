@@ -245,7 +245,7 @@ class _DraggableContentState extends State<DraggableContent> {
                       });
                       print('onAccept:$color');
                     },
-                    onLeave: (Color color) {
+                    onLeave: (Object color) {
                       print('onLeave:$color');
                     },
                   )

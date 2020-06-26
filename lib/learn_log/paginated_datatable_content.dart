@@ -70,7 +70,6 @@ class _PaginatedDataTableContentState extends State<PaginatedDataTableContent> {
         },
       ),
     );
-    ;
   }
 }
 

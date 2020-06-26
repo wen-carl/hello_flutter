@@ -142,7 +142,7 @@ class _SignUpPageState extends State<SignUpPage> {
                   Icons.lock,
                   color: Colors.black,
                 ),
-                hintText: "Confirm Passowrd",
+                hintText: "Confirm Password",
                 border: InputBorder.none,
                 suffixIcon: new IconButton(
                     icon: new Icon(

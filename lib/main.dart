@@ -95,7 +95,7 @@ class _HomePageState extends State<HomePage> {
         case DemoItem.Dialog:
           widget = DialogPage();
           break;
-        case DemoItem.BottoSheet:
+        case DemoItem.BottomSheet:
           widget = BottomSheetPage();
           break;
         default:
@@ -120,7 +120,7 @@ class _HomePageState extends State<HomePage> {
 enum DemoItem {
   Login,
   Dialog,
-  BottoSheet,
+  BottomSheet,
 }
 
 enum LogItem {
