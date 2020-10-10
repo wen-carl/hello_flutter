@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:hello_flutter/demo/floating_demo.dart';
 
 import 'demo/bottom_sheet_page.dart';
 import 'demo/dialog_page.dart';
@@ -98,6 +99,9 @@ class _HomePageState extends State<HomePage> {
         case DemoItem.BottomSheet:
           widget = BottomSheetPage();
           break;
+        case DemoItem.FloatingDemo:
+          widget = FloatingDemo();
+          break;
         default:
           widget = Container();
       }
@@ -121,6 +125,7 @@ enum DemoItem {
   Login,
   Dialog,
   BottomSheet,
+  FloatingDemo,
 }
 
 enum LogItem {
